@@ -49,18 +49,13 @@ public class powerUps : MonoBehaviour
             }
         }
 
-        // Hareket ettir
-        transform.position += moveDirection.normalized * followSpeed * Time.deltaTime;
+        // Yeni pozisyonu hesapla
+        Vector3 newPosition = transform.position + moveDirection.normalized * followSpeed * Time.deltaTime;
 
-        // Ground check - yere çok yakınsa yukarı taşı
-        Ray groundRay = new Ray(transform.position, Vector3.down);
-        if (Physics.Raycast(groundRay, out RaycastHit hit, 1f, LayerMask.GetMask("ground")))
-        {
-            float groundDistance = hit.distance;
-            if (groundDistance < 0.5f)
-            {
-                transform.position += Vector3.up * (0.3f - groundDistance); // 0.3 yüksekliğe sabitler
-            }
-        }
+        // Oyuncunun Y seviyesinin altına inmesini engelle
+        newPosition.y = Mathf.Max(newPosition.y, player.position.y);
+
+        // Yeni pozisyona hareket et
+        transform.position = newPosition;
     }
 }
