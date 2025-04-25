@@ -1,29 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowingEnemyMovement : MonoBehaviour
 {
     public float moveSpeed = 3f; // Takip hızı
 
-    public Transform playerTransform;
+    private Transform playerTransform;
     private bool playerInRange = false;
-    
+    private float fixedY;
+
+    void Start()
+    {
+        fixedY = transform.position.y; // Enemy'nin başlangıç Y konumu
+    }
 
     void Update()
     {
         if (playerInRange && playerTransform != null)
         {
-            // Player’a doğru yönel ve ilerle
-            Vector3 direction = (playerTransform.position - transform.position).normalized;
+            // Yalnızca XZ düzleminde yön bul
+            Vector3 flatPlayerPos = new Vector3(playerTransform.position.x, fixedY, playerTransform.position.z);
+            Vector3 direction = (flatPlayerPos - transform.position).normalized;
+
+            // Hareket
             transform.position += direction * moveSpeed * Time.deltaTime;
 
-            // Sadece yatay düzlemde bakmasını istiyorsan:
-            Vector3 lookPos = playerTransform.position;
-            lookPos.y = transform.position.y;
-            transform.LookAt(lookPos);
+            // Sadece yatayda bak
+            if (direction != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Euler(0f, targetRotation.eulerAngles.y, 0f);
+            }
+
+            // Y konumunu her frame sabitle (ekstra koruma)
+            Vector3 fixedPosition = transform.position;
+            fixedPosition.y = fixedY;
+            transform.position = fixedPosition;
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
