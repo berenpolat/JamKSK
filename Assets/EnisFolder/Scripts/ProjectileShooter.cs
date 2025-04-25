@@ -17,6 +17,7 @@ public class ProjectileShooter3D : MonoBehaviour
     private Camera cam;
 
     [SerializeField] private Animator animator;
+    public GameObject swordObject;
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class ProjectileShooter3D : MonoBehaviour
         cam = Camera.main;
         isProjectileArmed = false;
         isSwordArmed = true;
+        swordObject.SetActive(false);
+        
     }
 
     void Update()
@@ -39,7 +42,7 @@ public class ProjectileShooter3D : MonoBehaviour
             Shoot();
         }
 
-        if (Input.GetMouseButtonDown(1) && isSwordArmed)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && isSwordArmed)
         { 
             Sword();   
         }
@@ -82,6 +85,7 @@ public class ProjectileShooter3D : MonoBehaviour
 
     void Sword()
     {
+        swordObject.SetActive(true);
         animator.SetTrigger("sword");
     }
     public void OnTriggerEnter(Collider other)
