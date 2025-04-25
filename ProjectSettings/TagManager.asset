@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Ball
+  - projectiler
+  - sworder
+  - dasher
+  - PowerUp
   layers:
   - Default
   - TransparentFX

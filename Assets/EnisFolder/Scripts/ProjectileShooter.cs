@@ -1,6 +1,8 @@
 using System;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ProjectileShooter3D : MonoBehaviour
 {
@@ -17,8 +19,13 @@ public class ProjectileShooter3D : MonoBehaviour
     private Camera cam;
 
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject projectilePowerUp;
+    [SerializeField] private GameObject swordPowerUp;
     public GameObject swordObject;
 
+    
+    private GameObject currentPowerUpInstance;
+    private GameObject currentSwordPowerUp;
     private void Awake()
     {
         Instance = this;
@@ -28,7 +35,7 @@ public class ProjectileShooter3D : MonoBehaviour
     {
         cam = Camera.main;
         isProjectileArmed = false;
-        isSwordArmed = true;
+        isSwordArmed = false;
         swordObject.SetActive(false);
         
     }
@@ -80,11 +87,13 @@ public class ProjectileShooter3D : MonoBehaviour
             // FirePoint'in yukarı yönüne doğru fırlat (LookRotation bu yöne bakıyor)
             rb.velocity = firePoint.up * projectileSpeed;
             isProjectileArmed = false;
+            Destroy(currentPowerUpInstance);
         }
     }
 
     void Sword()
     {
+        Destroy(currentSwordPowerUp);
         swordObject.SetActive(true);
         animator.SetTrigger("sword");
     }
@@ -93,8 +102,21 @@ public class ProjectileShooter3D : MonoBehaviour
         if (other.transform.tag == "projectiler" && isProjectileArmed == false)
         {
             isProjectileArmed = true;
+
+            // İstenilen objeyi spawn et
+            currentPowerUpInstance = Instantiate(projectilePowerUp, transform.position, Quaternion.identity);
+
             Destroy(other.gameObject);
         }
+
+        if (other.transform.tag == "sworder")
+        {
+            isSwordArmed = true;
+
+            currentSwordPowerUp = Instantiate(swordPowerUp, transform.position, quaternion.identity);
+            Destroy(other.gameObject);
+        }
+
 
         if (other.transform.tag == "Ball")
         {
