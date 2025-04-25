@@ -65,26 +65,32 @@ public class PlayerController : MonoBehaviour
             return; // Dash sırasında normal hareketi atla
         }
 
-        // Sağ/sol hareket
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Vector3 move = new Vector3(horizontalInput, 0f, 0f);
-        controller.Move(move * moveSpeed * Time.deltaTime);
-
-        // Zıplama
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (!isDashing)
         {
-            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            // Sağ/sol hareket
+            float horizontalInput = Input.GetAxis("Horizontal");
+            Vector3 move = new Vector3(horizontalInput, 0f, 0f);
+            controller.Move(move * moveSpeed * Time.deltaTime);
+            
+            // Zıplama
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            }
+
+            // Yerçekimi uygula
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
+
+            // Karakteri yöne döndür
+            if (horizontalInput > 0)
+                transform.rotation = Quaternion.Euler(0, 90, 0);
+            else if (horizontalInput < 0)
+                transform.rotation = Quaternion.Euler(0, -90, 0);
         }
+        
 
-        // Yerçekimi uygula
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-
-        // Karakteri yöne döndür
-        if (horizontalInput > 0)
-            transform.rotation = Quaternion.Euler(0, 90, 0);
-        else if (horizontalInput < 0)
-            transform.rotation = Quaternion.Euler(0, -90, 0);
+        
     }
 
     void StartDash()
