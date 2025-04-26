@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
     public float gravity = -20f;
-    public float dashSpeed = 15f;         // Dash sırasında kullanılacak hız
+    public float dashSpeed = 25f;         // Dash sırasında kullanılacak hız
     public float dashDuration = 0.2f;     // Dash ne kadar sürsün
 
     private CharacterController controller;
@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool dashPowerUpShows;
     void Start()
     {
+        dashPowerUpShows = false;
         canDash = false;
         controller = GetComponent<CharacterController>();
     }
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.transform.tag == "dasher")
         {
+            dashPowerUpShows = true;
             currentDashPowerUp = Instantiate(dashPowerUp, transform.position, Quaternion.identity);
             canDash = true;
             Destroy(other.gameObject);
@@ -95,6 +97,7 @@ public class PlayerController : MonoBehaviour
 
     void StartDash()
     {
+        dashPowerUpShows = false;
         Destroy(currentDashPowerUp);
         isDashing = true;
         dashTime = dashDuration;
