@@ -6,6 +6,7 @@ public class IdleEnemyScript : MonoBehaviour
 {
     public float forceAmount = 10f;
 
+    [SerializeField] private  float distance;
     private Rigidbody rb;
     private Vector3 startPosition;
     private bool goingRight = false;
@@ -24,14 +25,14 @@ public class IdleEnemyScript : MonoBehaviour
     {
         float offset = transform.position.x - startPosition.x;
 
-        if (!goingRight && offset <= -3f)
+        if (!goingRight && offset <= -distance)
         {
             goingRight = true;
             rb.velocity = Vector3.zero;
             rb.AddForce(Vector3.right * forceAmount, ForceMode.Impulse);
             FlipSprite(true); // sağa bak
         }
-        else if (goingRight && offset >= 3f)
+        else if (goingRight && offset >= distance)
         {
             goingRight = false;
             rb.velocity = Vector3.zero;

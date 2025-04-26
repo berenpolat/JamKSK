@@ -48,6 +48,7 @@ public class FlyingEnemyScript : MonoBehaviour
         BallScript ballScript = ball.GetComponent<BallScript>();
         if (ballScript != null)
         {
+            Debug.Log("vurdum");
             ballScript.SetTarget(playerTransform.position);
         }
     }
