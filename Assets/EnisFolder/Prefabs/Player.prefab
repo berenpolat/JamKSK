@@ -216,7 +216,9 @@ MonoBehaviour:
   gravity: -50
   dashSpeed: 15
   dashDuration: 0.2
+  isDashing: 0
   canDash: 0
+  dashPowerUp: {fileID: 0}
 --- !u!54 &7274680340305471565
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -243,7 +245,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!143 &2158288398839694676
 CharacterController:
   m_ObjectHideFlags: 0
@@ -290,7 +292,8 @@ MonoBehaviour:
   isSwordArmed: 0
   animator: {fileID: 9113943538596758365}
   projectilePowerUp: {fileID: 0}
-  swordObject: {fileID: 9022153722394729019}
+  swordPowerUp: {fileID: 0}
+  swordObject: {fileID: 1500080810354610207}
 --- !u!95 &9113943538596758365
 Animator:
   serializedVersion: 5

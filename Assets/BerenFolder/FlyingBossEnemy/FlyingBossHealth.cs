@@ -30,7 +30,7 @@ public class FlyingBossHealth : MonoBehaviour
             // Health bar boss'un üstünde dursun
             healthBarCanvas.position = transform.position + offset;
 
-            // Health bar hep kameraya baksın (düz dursun)
+            // Health bar hep kameraya baksın
             healthBarCanvas.forward = Camera.main.transform.forward;
         }
     }
@@ -38,6 +38,9 @@ public class FlyingBossHealth : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+
+        if (currentHealth < 0f)
+            currentHealth = 0f;
 
         if (healthBarSlider != null)
         {
@@ -54,5 +57,20 @@ public class FlyingBossHealth : MonoBehaviour
     {
         Debug.Log("Boss defeated!");
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            Debug.Log("FlyingBoss hit by bullet!");
+
+            // Bullet ile çarpışınca canın %20'sini kaybetsin
+            float damageAmount = maxHealth * 0.2f;
+            TakeDamage(damageAmount);
+
+            // Bullet'ı yok et
+            Destroy(other.gameObject);
+        }
     }
 }

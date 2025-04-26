@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -45,5 +46,14 @@ public class IdleEnemyScript : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x = Mathf.Abs(scale.x) * (faceRight ? 1 : -1);
         transform.localScale = scale;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            Destroy(this.gameObject);
+            //EFEKT EKLE MQ
+        }
     }
 }

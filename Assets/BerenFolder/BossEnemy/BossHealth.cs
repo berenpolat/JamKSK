@@ -7,8 +7,8 @@ public class BossHealth : MonoBehaviour
     private float currentHealth;
 
     public Slider healthBarSlider;
-    public Transform healthBarCanvas; // Sağlık barının world-space canvas'ı
-    public Vector3 offset = new Vector3(0, 2f, 0); // Boss'un üstünde nerede dursun
+    public Transform healthBarCanvas;
+    public Vector3 offset = new Vector3(0, 2f, 0);
 
     void Start()
     {
@@ -25,17 +25,20 @@ public class BossHealth : MonoBehaviour
     {
         if (healthBarCanvas != null)
         {
-            // Health bar boss'un üstünde dursun
             healthBarCanvas.position = transform.position + offset;
-
-            // Health bar hep kameraya baksın (düz dursun)
             healthBarCanvas.forward = Camera.main.transform.forward;
         }
     }
 
     public void TakeDamage(float amount)
     {
+        Debug.Log("CAN AZALDI");
         currentHealth -= amount;
+
+        if (currentHealth < 0f)
+        {
+            currentHealth = 0f;
+        }
 
         if (healthBarSlider != null)
         {
@@ -52,5 +55,20 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("Boss defeated!");
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            Debug.Log("Boss hit by bullet!");
+
+            // Bullet ile çarpışınca canın %20'sini kaybetsin
+            float damageAmount = maxHealth * 0.2f;
+            TakeDamage(damageAmount);
+
+            // (Opsiyonel) bullet'ı da yok etmek istersen:
+            Destroy(other.gameObject);
+        }
     }
 }

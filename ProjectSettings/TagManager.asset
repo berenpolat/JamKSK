@@ -10,6 +10,8 @@ TagManager:
   - sworder
   - dasher
   - PowerUp
+  - GROUND
+  - Bullet
   layers:
   - Default
   - TransparentFX
