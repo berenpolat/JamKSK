@@ -16,7 +16,7 @@ public class FlyingBossEnemyScript : MonoBehaviour
 
     private bool canShoot = true;
     private float shootCooldownTimer = 0f;
-    private float shootCooldownDuration = 2f;
+    [SerializeField ]private float shootCooldownDuration;
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class FlyingBossEnemyScript : MonoBehaviour
         {
             float distanceX = Mathf.Abs(playerTransform.position.x - transform.position.x);
 
-            if (canShoot && distanceX <= 10f && distanceX > 5f)
+            if (canShoot && distanceX <= 30f)
             {
                 RandomShooting(); // RANDOM olarak hangi saldırılar çalışacak?
                 canShoot = false;
@@ -55,10 +55,7 @@ public class FlyingBossEnemyScript : MonoBehaviour
                     canShoot = true;
                 }
             }
-            else if (distanceX <= 5f)
-            {
-                // Yakın saldırı yapılabilir.
-            }
+            
         }
     }
 

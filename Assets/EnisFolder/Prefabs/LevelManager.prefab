@@ -49,4 +49,8 @@ MonoBehaviour:
     sceneName: tutorialLevel
   - sceneAsset: {fileID: 102900000, guid: cca37cb19e4016d4aab82f446f1cf6fe, type: 3}
     sceneName: level1
+  - sceneAsset: {fileID: 102900000, guid: 36ae16855829dac4f87f18c2c2809a7b, type: 3}
+    sceneName: level2
+  - sceneAsset: {fileID: 102900000, guid: deab97b4d36d9634db83bb0fa0c8700a, type: 3}
+    sceneName: level3
   currentLevelIndex: 0
