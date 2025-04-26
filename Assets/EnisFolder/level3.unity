@@ -1003,6 +1003,18 @@ PrefabInstance:
       propertyPath: currentLevelIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
+      propertyPath: levels.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
+      propertyPath: levels.Array.data[4].sceneName
+      value: level3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
+      propertyPath: levels.Array.data[4].sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: deab97b4d36d9634db83bb0fa0c8700a, type: 3}
     - target: {fileID: 6545642529316715099, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
