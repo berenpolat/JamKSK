@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 454936547433049422}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3255816601127647284, guid: b169e8a505382a5459e56011f40536cf, type: 3}
-  firePoint: {fileID: 7096217020019969462}
+  firePoint: {fileID: 454936547433049422}
   projectileSpeed: 50
   firePointRadius: 2
   isProjectileArmed: 0
