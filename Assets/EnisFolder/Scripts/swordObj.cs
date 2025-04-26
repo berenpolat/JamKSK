@@ -31,8 +31,8 @@ public class swordObj : MonoBehaviour
     }
     void Sword()
     {
-        Destroy(ProjectileShooter3D.Instance.currentSwordPowerUp);
         ProjectileShooter3D.Instance.ResetSwordPowerUpSpawning();
+        Destroy(ProjectileShooter3D.Instance.currentSwordPowerUp);
         swordObject.SetActive(true);
         animator.SetTrigger("sword");
     }
