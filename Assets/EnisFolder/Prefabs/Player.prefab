@@ -333,7 +333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2466534370861776616}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0099833, y: 1.3576143, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   isProjectileArmed: 0
   projectilePowerUp: {fileID: 1669247121725431779, guid: 3e0a26b781f241043951606995e79e50, type: 3}
   swordPowerUp: {fileID: 9188341826104937751, guid: 980bde368414ebd48b7ee8fecf2a66f6, type: 3}
-  currentSwordPowerUp: {fileID: 0}
+  currentSwordPowerUp: {fileID: 4893362812646678493}
   holdToInteractUI: {fileID: 4543666023137720037}
   holdToInteractBar: {fileID: 2227718592562152175}
   requiredHoldTime: 2

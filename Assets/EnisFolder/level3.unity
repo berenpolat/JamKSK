@@ -1406,6 +1406,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3318727337236635865, guid: aad5b680b9475e34380ced9ddcc9ee56, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4258988990563111731, guid: aad5b680b9475e34380ced9ddcc9ee56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.25
@@ -1559,12 +1563,6 @@ MonoBehaviour:
   - spawnTransform: {fileID: 1226367705}
     currentObject: {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}
   - spawnTransform: {fileID: 1116373362}
-    currentObject: {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}
-  - spawnTransform: {fileID: 1078586256}
-    currentObject: {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}
-  - spawnTransform: {fileID: 1251566122}
-    currentObject: {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}
-  - spawnTransform: {fileID: 1720562331}
     currentObject: {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}
   randomPrefabs:
   - {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}

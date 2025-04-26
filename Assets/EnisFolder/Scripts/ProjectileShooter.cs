@@ -140,17 +140,21 @@ public class ProjectileShooter3D : MonoBehaviour
 
         if (other.CompareTag("Ball") && !PlayerController.Instance.isDashing)
         {
-            Destroy(gameObject);
+            LevelManager.Instance.RestartLevel();
+            //Destroy(gameObject);
         }
 
         if (other.CompareTag("Enemy") && !PlayerController.Instance.isDashing)
         {
-            Destroy(gameObject);
+            LevelManager.Instance.RestartLevel();
+            //Destroy(gameObject);
         }
 
         if (other.CompareTag("trap"))
         {
-            Destroy(gameObject);
+            LevelManager.Instance.RestartLevel();
+            //Destroy(gameObject);
+            
         }
 
         if (other.CompareTag("levelEnder"))
