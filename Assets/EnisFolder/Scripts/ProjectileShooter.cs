@@ -142,13 +142,11 @@ public void OnTriggerEnter(Collider other)
 
     if (other.CompareTag("sworder"))
     {
-        if (!swordObj.Instance.isSwordArmed && currentSwordPowerUp == null && !isSwordPowerUpSpawning)
+        if (!swordObj.Instance.isSwordArmed)
         {
-            isSwordPowerUpSpawning = true; // Kilitle
             swordObj.Instance.isSwordArmed = true;
             currentSwordPowerUp = Instantiate(swordPowerUp, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-            
         }
     }
 
@@ -180,10 +178,6 @@ private void ResetProjectilePowerUpSpawning()
     isProjectilePowerUpSpawning = false;
 }
 
-public void ResetSwordPowerUpSpawning()
-{
-    isSwordPowerUpSpawning = false;
-}
 
 public void OnTriggerExit(Collider other)
 {
