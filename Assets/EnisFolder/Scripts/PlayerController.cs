@@ -38,14 +38,18 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "dasher")
+        if (other.CompareTag("dasher"))
         {
-            dashPowerUpShows = true;
-            currentDashPowerUp = Instantiate(dashPowerUp, transform.position, Quaternion.identity);
-            canDash = true;
-            Destroy(other.gameObject);
+            if (!dashPowerUpShows && currentDashPowerUp == null)
+            {
+                dashPowerUpShows = true;
+                currentDashPowerUp = Instantiate(dashPowerUp, transform.position, Quaternion.identity);
+                canDash = true;
+                Destroy(other.gameObject);
+            }
         }
     }
+
 
     void Update()
     {

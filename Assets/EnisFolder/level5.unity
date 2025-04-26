@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 194880180}
   m_Layer: 0
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 677207767}
   m_Layer: 0
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 786780529}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1546,7 +1546,7 @@ GameObject:
   - component: {fileID: 998409034}
   m_Layer: 0
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1807,22 +1807,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: currentLevelIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[4].sceneName
-      value: level4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[4].sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: ecb86542572215f4ab3d3302a1d00d4c, type: 3}
     - target: {fileID: 6545642529316715099, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2081,7 +2065,7 @@ GameObject:
   - component: {fileID: 1501983317}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2600,6 +2584,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427877759878543536, guid: f2e6cc672c08e7e4cb3d881ccc01930d, type: 3}
+      propertyPath: swordPowerUp
+      value: 
+      objectReference: {fileID: 9188341826104937751, guid: 980bde368414ebd48b7ee8fecf2a66f6, type: 3}
+    - target: {fileID: 427877759878543536, guid: f2e6cc672c08e7e4cb3d881ccc01930d, type: 3}
+      propertyPath: currentSwordPowerUp
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 747266316959958957, guid: f2e6cc672c08e7e4cb3d881ccc01930d, type: 3}
       propertyPath: m_Layer
       value: 4
@@ -2671,7 +2663,7 @@ GameObject:
   - component: {fileID: 2045493592}
   m_Layer: 0
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

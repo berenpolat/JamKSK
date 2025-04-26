@@ -122,58 +122,79 @@ public class ProjectileShooter3D : MonoBehaviour
 
    
 
-    public void OnTriggerEnter(Collider other)
+    private bool isProjectilePowerUpSpawning = false;
+public bool isSwordPowerUpSpawning = false;
+
+public void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("projectiler"))
     {
-        if (other.CompareTag("projectiler") && !isProjectileArmed)
+        if (!isProjectileArmed && currentPowerUpInstance == null && !isProjectilePowerUpSpawning)
         {
+            isProjectilePowerUpSpawning = true; // İlk saniyede kilitle
             isProjectileArmed = true;
             currentPowerUpInstance = Instantiate(projectilePowerUp, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-        }
 
-        if (other.CompareTag("sworder"))
+            Invoke(nameof(ResetProjectilePowerUpSpawning), 0.05f); // 0.05 saniye sonra aç
+        }
+    }
+
+    if (other.CompareTag("sworder"))
+    {
+        if (!swordObj.Instance.isSwordArmed && currentSwordPowerUp == null && !isSwordPowerUpSpawning)
         {
+            isSwordPowerUpSpawning = true; // Kilitle
             swordObj.Instance.isSwordArmed = true;
-            currentSwordPowerUp = Instantiate(swordPowerUp, transform.position, quaternion.identity);
+            currentSwordPowerUp = Instantiate(swordPowerUp, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-        }
-
-        if (other.CompareTag("Ball") && !PlayerController.Instance.isDashing)
-        {
-            LevelManager.Instance.RestartLevel();
-            //Destroy(gameObject);
-        }
-
-        if (other.CompareTag("Enemy") && !PlayerController.Instance.isDashing)
-        {
-            LevelManager.Instance.RestartLevel();
-            //Destroy(gameObject);
-        }
-
-        if (other.CompareTag("trap"))
-        {
-            LevelManager.Instance.RestartLevel();
-            //Destroy(gameObject);
             
         }
-
-        if (other.CompareTag("levelEnder"))
-        {
-            isNearLevelEnder = true;
-            holdToInteractUI.SetActive(true);
-            currentLevelEnder = other.gameObject;
-        }
     }
 
-    public void OnTriggerExit(Collider other)
+    if (other.CompareTag("Ball") && !PlayerController.Instance.isDashing)
     {
-        if (other.CompareTag("levelEnder"))
-        {
-            isNearLevelEnder = false;
-            holdToInteractUI.SetActive(false);
-            holdTime = 0f;
-            holdToInteractBar.fillAmount = 0f;
-            currentLevelEnder = null;
-        }
+        LevelManager.Instance.RestartLevel();
     }
+
+    if (other.CompareTag("Enemy") && !PlayerController.Instance.isDashing)
+    {
+        LevelManager.Instance.RestartLevel();
+    }
+
+    if (other.CompareTag("trap"))
+    {
+        LevelManager.Instance.RestartLevel();
+    }
+
+    if (other.CompareTag("levelEnder"))
+    {
+        isNearLevelEnder = true;
+        holdToInteractUI.SetActive(true);
+        currentLevelEnder = other.gameObject;
+    }
+}
+
+private void ResetProjectilePowerUpSpawning()
+{
+    isProjectilePowerUpSpawning = false;
+}
+
+public void ResetSwordPowerUpSpawning()
+{
+    isSwordPowerUpSpawning = false;
+}
+
+public void OnTriggerExit(Collider other)
+{
+    if (other.CompareTag("levelEnder"))
+    {
+        isNearLevelEnder = false;
+        holdToInteractUI.SetActive(false);
+        holdTime = 0f;
+        holdToInteractBar.fillAmount = 0f;
+        currentLevelEnder = null;
+    }
+}
+
 }
