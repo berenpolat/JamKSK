@@ -60,11 +60,6 @@ public class FlyingEnemyScript : MonoBehaviour
             playerTransform = other.transform;
             playerInRange = true;
         }
-        if (other.CompareTag("Bullet"))
-        {
-            Destroy(this.gameObject);
-            //EFEKT EKLE MQ
-        }
     }
     
     private void OnTriggerExit(Collider other)
