@@ -10,8 +10,9 @@ TagManager:
   - sworder
   - dasher
   - PowerUp
-  - GROUND
   - Bullet
+  - trap
+  - levelEnder
   layers:
   - Default
   - TransparentFX
