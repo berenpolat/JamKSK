@@ -115,6 +115,6 @@ public class FlyingBossEnemyScript : MonoBehaviour
             trackingScript.SetTarget(playerTransform);
         }
 
-        Destroy(bullet, 2f);
+        Destroy(bullet, 1f);
     }
 }
