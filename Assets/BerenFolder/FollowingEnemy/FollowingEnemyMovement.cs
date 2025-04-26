@@ -8,6 +8,9 @@ public class FollowingEnemyMovement : MonoBehaviour
     private bool playerInRange = false;
     private float fixedY;
 
+    // ------- Animator için eklenenler -------
+    [SerializeField] private Animator animator;
+
     void Start()
     {
         fixedY = transform.position.y; // Enemy'nin başlangıç Y konumu
@@ -24,6 +27,9 @@ public class FollowingEnemyMovement : MonoBehaviour
             // Hareket
             transform.position += direction * moveSpeed * Time.deltaTime;
 
+            // Animator için: Hareket varsa Run true, yoksa false
+            animator.SetBool("run", direction.magnitude > 0.1f);
+
             // Sadece yatayda bak
             if (direction != Vector3.zero)
             {
@@ -31,10 +37,15 @@ public class FollowingEnemyMovement : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, targetRotation.eulerAngles.y, 0f);
             }
 
-            // Y konumunu her frame sabitle (ekstra koruma)
+            // Y konumunu sabitle (ekstra koruma)
             Vector3 fixedPosition = transform.position;
             fixedPosition.y = fixedY;
             transform.position = fixedPosition;
+        }
+        else
+        {
+            // Oyuncu menzilden çıkarsa koşmayı durdur
+            animator.SetBool("run", false);
         }
     }
 
