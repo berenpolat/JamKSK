@@ -13,17 +13,17 @@ public class ProjectileShooter3D : MonoBehaviour
     public float firePointRadius = 1.5f;
 
     public bool isProjectileArmed;
-    public bool isSwordArmed;
+   
 
     private Camera cam;
 
-    [SerializeField] private Animator animator;
+    
     [SerializeField] private GameObject projectilePowerUp;
     [SerializeField] private GameObject swordPowerUp;
-    public GameObject swordObject;
+    
 
     private GameObject currentPowerUpInstance;
-    private GameObject currentSwordPowerUp;
+    public GameObject currentSwordPowerUp;
 
     // UI ve LevelEnder için
     public GameObject holdToInteractUI;
@@ -43,8 +43,7 @@ public class ProjectileShooter3D : MonoBehaviour
     {
         cam = Camera.main;
         isProjectileArmed = false;
-        isSwordArmed = false;
-        swordObject.SetActive(false);
+        
         holdToInteractUI.SetActive(false);
     }
 
@@ -57,10 +56,7 @@ public class ProjectileShooter3D : MonoBehaviour
             Shoot();
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && isSwordArmed)
-        {
-            Sword();
-        }
+        
 
         if (isNearLevelEnder)
         {
@@ -75,7 +71,9 @@ public class ProjectileShooter3D : MonoBehaviour
                 {
                     if (currentLevelEnder != null)
                     {
+                        
                         Destroy(currentLevelEnder);
+                        LevelManager.Instance.LoadNextLevel();
                     }
 
                     holdToInteractUI.SetActive(false);
@@ -122,12 +120,7 @@ public class ProjectileShooter3D : MonoBehaviour
         }
     }
 
-    void Sword()
-    {
-        Destroy(currentSwordPowerUp);
-        swordObject.SetActive(true);
-        animator.SetTrigger("sword");
-    }
+   
 
     public void OnTriggerEnter(Collider other)
     {
@@ -140,7 +133,7 @@ public class ProjectileShooter3D : MonoBehaviour
 
         if (other.CompareTag("sworder"))
         {
-            isSwordArmed = true;
+            swordObj.Instance.isSwordArmed = true;
             currentSwordPowerUp = Instantiate(swordPowerUp, transform.position, quaternion.identity);
             Destroy(other.gameObject);
         }

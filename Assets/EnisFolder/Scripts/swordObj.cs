@@ -5,11 +5,34 @@ using UnityEngine;
 
 public class swordObj : MonoBehaviour
 {
-    public void OnTriggerEnter(Collider other)
+    
+    public static swordObj Instance { get; set; }
+    public bool isSwordArmed;
+    [SerializeField] private Animator animator;
+    public GameObject swordObject;
+
+    private void Awake()
     {
-        if (other.transform.tag == "Enemy")
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        isSwordArmed = false;
+        swordObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && isSwordArmed)
         {
-            Destroy(other.gameObject);
+            Sword();
         }
+    }
+    void Sword()
+    {
+        Destroy(ProjectileShooter3D.Instance.currentSwordPowerUp);
+        swordObject.SetActive(true);
+        animator.SetTrigger("sword");
     }
 }

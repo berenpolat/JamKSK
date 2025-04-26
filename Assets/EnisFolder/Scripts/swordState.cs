@@ -19,7 +19,8 @@ public class swordState : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        ProjectileShooter3D.Instance.swordObject.SetActive(false);
+        swordObj.Instance.swordObject.SetActive(false);
+        swordObj.Instance.isSwordArmed = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
