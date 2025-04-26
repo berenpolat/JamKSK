@@ -1,12 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public static ButtonController Instance { get; set;}
     public GameObject mainMenuPanel;
     public GameObject levelFailPanel;
     public GameObject completePanel;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public void PlayButton()
     {
         mainMenuPanel.SetActive(false);

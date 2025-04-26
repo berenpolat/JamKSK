@@ -159,7 +159,7 @@ public void OnTriggerEnter(Collider other)
 
     if (other.CompareTag("Enemy") && !PlayerController.Instance.isDashing)
     {
-        LevelManager.Instance.RestartLevel();
+        ButtonController.Instance.levelFailPanel.SetActive(true);
     }
 
     if (other.CompareTag("trap"))
