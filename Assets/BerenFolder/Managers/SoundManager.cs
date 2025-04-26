@@ -29,4 +29,4 @@ public class SoundManager : MonoBehaviour
     {
         // İstersen Update içinde başka triggerlar ile sesleri tetikleyebiliriz.
     }
-}
+}   

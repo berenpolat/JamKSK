@@ -3,29 +3,16 @@ using UnityEngine;
 
 public class EffectManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class EffectEntry
-    {
-        public Transform targetTransform; // Efektin çıkacağı obje
-        public GameObject effectPrefab;   // Çıkacak efekt prefabı
-    }
+ 
 
-    public List<EffectEntry> effectsList = new List<EffectEntry>();
 
-    void Start()
+    public void InitializeEffect(Transform targetTransform,GameObject effectPrefab)
     {
-        // Örnek: Başlangıçta hepsinin üstünde efekt başlatmak istersen:
-        foreach (EffectEntry entry in effectsList)
-        {
-            if (entry.targetTransform != null && entry.effectPrefab != null)
+      
+            if (targetTransform != null && effectPrefab != null)
             {
-                Instantiate(entry.effectPrefab, entry.targetTransform.position, Quaternion.identity);
+                Instantiate(effectPrefab, targetTransform.position, Quaternion.identity);
             }
         }
     }
 
-    void Update()
-    {
-        // Buraya istersen efektleri tetiklemek için input vs koyabiliriz
-    }
-}
