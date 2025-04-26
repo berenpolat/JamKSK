@@ -54,7 +54,7 @@ public class powerUps : MonoBehaviour
         Vector3 newPosition = transform.position + moveDirection.normalized * followSpeed * Time.deltaTime;
 
         // Y eksenini player'ın altına düşürme
-        newPosition.y = Mathf.Max(newPosition.y, player.position.y);
+        newPosition.y = Mathf.Max(newPosition.y, player.position.y+0.5f);
 
         transform.position = newPosition;
     }

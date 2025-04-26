@@ -4,11 +4,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; set;}
+    
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
     public float gravity = -20f;
-    public float dashSpeed = 25f;         // Dash sırasında kullanılacak hız
-    public float dashDuration = 0.2f;     // Dash ne kadar sürsün
+    public float dashSpeed = 25f;
+    public float dashDuration = 0.2f;
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -23,6 +24,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject dashPowerUp;
     private GameObject currentDashPowerUp;
     private bool dashPowerUpShows;
+
+    // ------------- Animator için eklenenler -------------
+    [SerializeField] private Animator animator;
 
     private void Awake()
     {
@@ -49,7 +53,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
 
     void Update()
     {
@@ -84,11 +87,22 @@ public class PlayerController : MonoBehaviour
             float horizontalInput = Input.GetAxis("Horizontal");
             Vector3 move = new Vector3(horizontalInput, 0f, 0f);
             controller.Move(move * moveSpeed * Time.deltaTime);
-            
+
+            // Animator için hareket kontrolü
+            if (isGrounded)
+            {
+                animator.SetBool("Running", Mathf.Abs(horizontalInput) > 0.1f);
+            }
+            else
+            {
+                animator.SetBool("Running", false);
+            }
+
             // Zıplama
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+                animator.SetTrigger("jump");
             }
 
             // Yerçekimi uygula
@@ -101,9 +115,6 @@ public class PlayerController : MonoBehaviour
             else if (horizontalInput < 0)
                 transform.rotation = Quaternion.Euler(0, -90, 0);
         }
-        
-
-        
     }
 
     void StartDash()
