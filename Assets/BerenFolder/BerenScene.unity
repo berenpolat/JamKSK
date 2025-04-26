@@ -508,6 +508,10 @@ PrefabInstance:
       value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 6282846903117600977, guid: b169e8a505382a5459e56011f40536cf, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 6282846903117600977, guid: b169e8a505382a5459e56011f40536cf, type: 3}
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
@@ -517,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8069260328726383583, guid: b169e8a505382a5459e56011f40536cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.82
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 8069260328726383583, guid: b169e8a505382a5459e56011f40536cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -975,6 +979,7 @@ GameObject:
   - component: {fileID: 6813163283924399802}
   - component: {fileID: 7827020850906744228}
   - component: {fileID: 8202968282416840708}
+  - component: {fileID: 8202968282416840709}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: Enemy
@@ -1275,6 +1280,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 2
+--- !u!114 &8202968282416840709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547373837119777251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4fc4cdc0af176d4ca5389a024e16275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8720921666531795499
 Transform:
   m_ObjectHideFlags: 0
