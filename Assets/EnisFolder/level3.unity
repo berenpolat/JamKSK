@@ -1446,6 +1446,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5772482556104799584, guid: aad5b680b9475e34380ced9ddcc9ee56, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6038433170633848611, guid: aad5b680b9475e34380ced9ddcc9ee56, type: 3}
       propertyPath: m_Name
       value: FlyingBossObject
