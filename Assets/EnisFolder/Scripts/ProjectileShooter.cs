@@ -10,7 +10,7 @@ public class ProjectileShooter3D : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float projectileSpeed = 15f;
-    public float firePointRadius = 1.5f;
+    public float firePointRadius = 10f;
 
     public bool isProjectileArmed;
    
@@ -94,18 +94,20 @@ public class ProjectileShooter3D : MonoBehaviour
     void FollowMouseOnXYPlane()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.forward, transform.position);
+        Vector3 centerPosition = new Vector3(transform.position.x, 2f, transform.position.z); // Y'yi 1f sabitledik
+        Plane plane = new Plane(Vector3.forward, centerPosition);
 
         if (plane.Raycast(ray, out float distance))
         {
             Vector3 mouseWorldPos = ray.GetPoint(distance);
-            Vector3 direction = (mouseWorldPos - transform.position).normalized;
+            Vector3 direction = (mouseWorldPos - centerPosition).normalized; // dikkat: centerPosition'dan hesaplıyoruz
 
             Vector3 offset = direction * firePointRadius;
-            firePoint.position = transform.position + offset;
+            firePoint.position = centerPosition + offset; // centerPosition + offset
             firePoint.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         }
     }
+
 
     void Shoot()
     {
