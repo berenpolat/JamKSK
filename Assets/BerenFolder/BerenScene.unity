@@ -761,7 +761,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 284246467554627570, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3583304342860499593, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: m_CollisionDetection
@@ -777,11 +777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671687959796449493, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.414
+      value: -4.89
       objectReference: {fileID: 0}
     - target: {fileID: 7671687959796449493, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 7671687959796449493, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8685576138962047501, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -959,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6038433170633848611, guid: aad5b680b9475e34380ced9ddcc9ee56, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6313374726932250770, guid: aad5b680b9475e34380ced9ddcc9ee56, type: 3}
       propertyPath: playerTransform
@@ -979,7 +979,7 @@ PrefabInstance:
       objectReference: {fileID: 373938815}
     - target: {fileID: 7026068932948976893, guid: aad5b680b9475e34380ced9ddcc9ee56, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
