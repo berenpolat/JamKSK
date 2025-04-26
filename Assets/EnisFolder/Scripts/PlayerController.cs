@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                animator.SetBool("Running", false);
+//                animator.SetBool("Running", false);
             }
 
             // Zıplama
