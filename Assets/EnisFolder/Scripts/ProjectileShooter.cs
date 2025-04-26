@@ -94,19 +94,22 @@ public class ProjectileShooter3D : MonoBehaviour
     void FollowMouseOnXYPlane()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Vector3 centerPosition = new Vector3(transform.position.x, 2f, transform.position.z); // Y'yi 1f sabitledik
+        Vector3 centerPosition = new Vector3(transform.position.x, 2f, transform.position.z); // Y'yi 2f sabitledik
         Plane plane = new Plane(Vector3.forward, centerPosition);
 
         if (plane.Raycast(ray, out float distance))
         {
             Vector3 mouseWorldPos = ray.GetPoint(distance);
-            Vector3 direction = (mouseWorldPos - centerPosition).normalized; // dikkat: centerPosition'dan hesaplıyoruz
+            Vector3 direction = (mouseWorldPos - centerPosition).normalized;
 
             Vector3 offset = direction * firePointRadius;
-            firePoint.position = centerPosition + offset; // centerPosition + offset
-            firePoint.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+            firePoint.position = centerPosition + offset;
+
+            // Burayı değiştirdik:
+            firePoint.LookAt(new Vector3(mouseWorldPos.x, firePoint.position.y, mouseWorldPos.z));
         }
     }
+
 
 
     void Shoot()
