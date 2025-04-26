@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - trap
   - levelEnder
+  - sword
   layers:
   - Default
   - TransparentFX
