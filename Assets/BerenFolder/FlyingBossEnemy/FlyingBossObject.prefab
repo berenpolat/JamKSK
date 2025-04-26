@@ -490,7 +490,7 @@ MonoBehaviour:
   moveSpeed: 3
   reachThreshold: 0.1
   playerTransform: {fileID: 0}
-  spherePrefab: {fileID: 6035926694442480306, guid: 1da9ca4e4399f1a42ac6655a6d6ced9b, type: 3}
+  spherePrefab: {fileID: 6035926694442480306, guid: 745ca2c1cb3ad46449cf0f12adc8b69b, type: 3}
   trackingBulletPrefab: {fileID: 6567165545913717202, guid: 58ca9401a9003754e9da6dc0b51f6beb, type: 3}
   scatterForce: 5
   shootCooldownDuration: 0
