@@ -55,6 +55,7 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("Boss defeated!");
         Destroy(gameObject);
+        LevelManager.Instance.LoadNextLevel();
     }
 
     private void OnTriggerEnter(Collider other)
