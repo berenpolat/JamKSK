@@ -73,6 +73,15 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void loadOldLevel()
+    {
+        if (currentLevelIndex > 0)
+        {
+            currentLevelIndex--;
+            SceneManager.LoadScene(levels[currentLevelIndex].sceneName);
+        }
+    }
+
     public void RestartLevel()
     {
         SceneManager.LoadScene(levels[currentLevelIndex].sceneName);
