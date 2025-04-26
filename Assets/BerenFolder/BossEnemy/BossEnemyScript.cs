@@ -17,8 +17,9 @@ public class BossEnemyScript : MonoBehaviour
             // Sadece X ekseninde mesafe hesapla
             float distanceX = Mathf.Abs(playerTransform.position.x - transform.position.x);
 
-            if (canShoot && distanceX <= 10f && distanceX > 5f)
+            if (canShoot && distanceX <= 100f && distanceX > 5f)
             {
+                Debug.Log("HIABFSIJZ");
                 // Boss ok atıyor
                 ScatterSpheres();
                 canShoot = false;

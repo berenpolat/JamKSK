@@ -473,6 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 3255816601127647284, guid: b169e8a505382a5459e56011f40536cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6282846903117600977, guid: b169e8a505382a5459e56011f40536cf, type: 3}
       propertyPath: m_Constraints
       value: 126
@@ -770,7 +774,7 @@ PrefabInstance:
     - target: {fileID: 3878964718540312085, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: playerTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4072378822775391184, guid: f2e6cc672c08e7e4cb3d881ccc01930d, type: 3}
     - target: {fileID: 4057864083136341757, guid: c05083c420e329343b71121eee025e0f, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1000,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 385640103552613576, guid: 1e80df7efda383e468522c0b40257c3e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4583480898688768366, guid: 1e80df7efda383e468522c0b40257c3e, type: 3}
       propertyPath: m_LocalPosition.x
