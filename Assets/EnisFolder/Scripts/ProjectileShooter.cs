@@ -123,7 +123,7 @@ public class ProjectileShooter3D : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" && !PlayerController.Instance.isDashing)
         {
             Destroy(gameObject);
         }

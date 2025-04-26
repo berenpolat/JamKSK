@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; set;}
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
     public float gravity = -20f;
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
 
-    private bool isDashing = false;
+    public bool isDashing = false;
     private float dashTime = 0f;
     private Vector3 dashDirection;
 
@@ -22,6 +23,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject dashPowerUp;
     private GameObject currentDashPowerUp;
     private bool dashPowerUpShows;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         dashPowerUpShows = false;
