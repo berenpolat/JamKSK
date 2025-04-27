@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6279301003140626006}
   - component: {fileID: 6282846903117600977}
   - component: {fileID: -2600644312260270711}
+  - component: {fileID: -1694113617978672804}
   m_Layer: 4
   m_Name: Projectile
   m_TagString: Bullet
@@ -247,3 +248,15 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-1694113617978672804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255816601127647284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa25333e6e7de74d866804cc128209a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
