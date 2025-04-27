@@ -181,9 +181,9 @@ public void OnTriggerEnter(Collider other)
         ButtonController.Instance.levelFailPanel.SetActive(true);
     }
 
-    if (other.CompareTag("trap"))
+    if (other.CompareTag("trap") && !PlayerController.Instance.isDashing)
     {
-        LevelManager.Instance.RestartLevel();
+        ButtonController.Instance.levelFailPanel.SetActive(true);
     }
 
     if (other.CompareTag("levelEnder"))
