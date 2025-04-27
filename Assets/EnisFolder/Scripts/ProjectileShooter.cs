@@ -94,7 +94,7 @@ public class ProjectileShooter3D : MonoBehaviour
     void FollowMouseOnXYPlane()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Vector3 centerPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z); // Y'yi 2f sabitledik
+        Vector3 centerPosition = new Vector3(transform.position.x, transform.position.y+2f, transform.position.z); // Y'yi 2f sabitledik
         Plane plane = new Plane(Vector3.forward, centerPosition);
 
         if (plane.Raycast(ray, out float distance))
