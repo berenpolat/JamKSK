@@ -90,7 +90,7 @@ public class FlyingBossEnemyScript : MonoBehaviour
 
         for (int i = 0; i < numberOfSpheres; i++)
         {
-            GameObject sphere = Instantiate(spherePrefab, transform.position, Quaternion.identity);
+            GameObject sphere = Instantiate(spherePrefab, new Vector3(transform.position.x, transform.position.y,0) , Quaternion.identity);
 
             Rigidbody rb = sphere.GetComponent<Rigidbody>();
             if (rb != null)
