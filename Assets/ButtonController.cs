@@ -35,5 +35,6 @@ public class ButtonController : MonoBehaviour
     {
         completePanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+        levelFailPanel.SetActive(false);
     }
 }
