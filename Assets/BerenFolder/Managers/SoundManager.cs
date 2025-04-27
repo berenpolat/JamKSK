@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance { get; set;}
     [System.Serializable]
     public class SoundEntry
     {
@@ -13,6 +15,11 @@ public class SoundManager : MonoBehaviour
     }
 
     public List<SoundEntry> soundsList = new List<SoundEntry>();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -58,6 +65,7 @@ public class SoundManager : MonoBehaviour
             entry.audioSource.clip = entry.audioClip;
             entry.audioSource.loop = loop;
             entry.audioSource.Play();
+            Debug.Log("Ses oynuyor");
         }
         else
         {
