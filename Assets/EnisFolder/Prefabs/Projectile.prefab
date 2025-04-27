@@ -260,3 +260,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa25333e6e7de74d866804cc128209a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 505107063889431248, guid: 01d7b2ededd32de4db76767150cdcd1a, type: 3}
