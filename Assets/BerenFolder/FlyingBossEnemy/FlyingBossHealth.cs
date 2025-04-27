@@ -57,7 +57,7 @@ public class FlyingBossHealth : MonoBehaviour
     {
         Debug.Log("Boss defeated!");
         Destroy(gameObject);
-        LevelManager.Instance.LoadNextLevel();
+        ButtonController.Instance.completePanel.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
