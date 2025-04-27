@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        
         // Sahne başladığında müzikleri otomatik çal
         foreach (SoundEntry entry in soundsList)
         {
