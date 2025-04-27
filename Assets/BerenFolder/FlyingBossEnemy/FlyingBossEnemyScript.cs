@@ -17,6 +17,7 @@ public class FlyingBossEnemyScript : MonoBehaviour
     private bool canShoot = true;
     private float shootCooldownTimer = 0f;
     [SerializeField ]private float shootCooldownDuration;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
@@ -85,6 +86,7 @@ public class FlyingBossEnemyScript : MonoBehaviour
 
     void ScatterSpheres()
     {
+        animator.SetTrigger("attack");
         int numberOfSpheres = 15;
         float angleStep = 360f / numberOfSpheres;
 
