@@ -4139,54 +4139,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[0].sceneName
-      value: tutorialLevel 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[1].sceneName
-      value: tutorialLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[2].sceneName
-      value: level1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[3].sceneName
-      value: level2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[4].sceneName
-      value: level4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[5].sceneName
-      value: level3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[0].sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: 5cd9632136ccf734f877399f2bf3c2a3, type: 3}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[1].sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: 5655008c26c008b418ab0bdba373fc05, type: 3}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[2].sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: cca37cb19e4016d4aab82f446f1cf6fe, type: 3}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[3].sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: 36ae16855829dac4f87f18c2c2809a7b, type: 3}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[4].sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: ecb86542572215f4ab3d3302a1d00d4c, type: 3}
-    - target: {fileID: 3349764418439299868, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
-      propertyPath: levels.Array.data[5].sceneAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: deab97b4d36d9634db83bb0fa0c8700a, type: 3}
     - target: {fileID: 6545642529316715099, guid: dd3e5d1728fcd5f45817decf14187e77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

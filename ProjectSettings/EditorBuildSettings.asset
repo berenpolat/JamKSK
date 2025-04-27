@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/EnisFolder/level3.unity
     guid: deab97b4d36d9634db83bb0fa0c8700a
+  - enabled: 1
+    path: Assets/EnisFolder/tutorialLevel 1.unity
+    guid: 5cd9632136ccf734f877399f2bf3c2a3
+  - enabled: 1
+    path: Assets/EnisFolder/level4.unity
+    guid: ecb86542572215f4ab3d3302a1d00d4c
   m_configObjects: {}
