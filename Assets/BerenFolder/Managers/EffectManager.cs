@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class EffectManager : MonoBehaviour
 {
- 
-
-
     public void InitializeEffect(Transform targetTransform,GameObject effectPrefab)
     {
       
