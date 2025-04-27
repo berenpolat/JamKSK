@@ -849,6 +849,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 39863b35ab083e94db5f7fd442a7aa5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5092399363285656856}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 39863b35ab083e94db5f7fd442a7aa5e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2280270238621546417}
   m_SourcePrefab: {fileID: 100100000, guid: 39863b35ab083e94db5f7fd442a7aa5e, type: 3}
 --- !u!4 &6924641489550880929 stripped
 Transform:
@@ -881,6 +884,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 7, z: 1}
   m_Center: {x: 0, y: 2.5452998, z: 0.00000027567162}
+--- !u!114 &2280270238621546417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733406321875937819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daa25333e6e7de74d866804cc128209a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraFollow: {fileID: 0}
 --- !u!1001 &7583637043304034197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1006,7 +1022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3255816601127647284, guid: b169e8a505382a5459e56011f40536cf, type: 3}
   firePoint: {fileID: 7096217020019969462}
-  projectileSpeed: 50
+  projectileSpeed: 30
   firePointRadius: 2
   isProjectileArmed: 0
   projectilePowerUp: {fileID: 1669247121725431779, guid: 3e0a26b781f241043951606995e79e50, type: 3}
