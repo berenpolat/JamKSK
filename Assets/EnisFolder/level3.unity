@@ -3262,7 +3262,6 @@ MonoBehaviour:
     currentObject: {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}
   randomPrefabs:
   - {fileID: 8495666075101002488, guid: a50c8e7f6ca0e6f488d11a8cbacce844, type: 3}
-  - {fileID: 2143588781191789529, guid: e884633bd1fcab3418dadf7089466813, type: 3}
   respawnDelay: 8
 --- !u!1001 &1755405883309233635
 PrefabInstance:
