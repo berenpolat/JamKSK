@@ -542,22 +542,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5597573457771219221, guid: 1e80df7efda383e468522c0b40257c3e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 30.000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597573457771219221, guid: 1e80df7efda383e468522c0b40257c3e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 30.000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5597573457771219221, guid: 1e80df7efda383e468522c0b40257c3e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 30.000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 6499296157237090905, guid: 1e80df7efda383e468522c0b40257c3e, type: 3}
-      propertyPath: shootInterval
-      value: 0.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2302,7 +2286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5311224801588353587, guid: 0b98e0621a59aae449f351eff95d45dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.25
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5311224801588353587, guid: 0b98e0621a59aae449f351eff95d45dc, type: 3}
       propertyPath: m_LocalPosition.z
