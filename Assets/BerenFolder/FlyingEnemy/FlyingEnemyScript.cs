@@ -11,6 +11,7 @@ public class FlyingEnemyScript : MonoBehaviour
     private float shootTimer = 0f;
     private float fixedY; // sabit Y yüksekliği
 
+    [SerializeField] private Animator animator;
     void Start()
     {
         fixedY = transform.position.y; // oyuna başladığı andaki Y yüksekliği sabitlenir
@@ -48,7 +49,7 @@ public class FlyingEnemyScript : MonoBehaviour
         BallScript ballScript = ball.GetComponent<BallScript>();
         if (ballScript != null)
         {
-            Debug.Log("vurdum");
+            animator.SetTrigger("shoot");
             ballScript.SetTarget(playerTransform.position);
         }
     }
