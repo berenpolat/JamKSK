@@ -2497,6 +2497,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2280270238621546417, guid: a81b387bf2fa2f7419c1ad4a562a56fa, type: 3}
+      propertyPath: cameraFollow
+      value: 
+      objectReference: {fileID: 6343246035425054835, guid: 01d7b2ededd32de4db76767150cdcd1a, type: 3}
+    - target: {fileID: 2280270238621546417, guid: a81b387bf2fa2f7419c1ad4a562a56fa, type: 3}
+      propertyPath: swordEffectPrefab
+      value: 
+      objectReference: {fileID: 7280783611191180529, guid: 3498fbd69095acd45a253705bbc2a050, type: 3}
+    - target: {fileID: 2280270238621546417, guid: a81b387bf2fa2f7419c1ad4a562a56fa, type: 3}
+      propertyPath: defaultEffectPrefab
+      value: 
+      objectReference: {fileID: 2600284102709815662, guid: 7dbbc12fca3265640863946a4dc0abd0, type: 3}
     - target: {fileID: 3812533787028412040, guid: a81b387bf2fa2f7419c1ad4a562a56fa, type: 3}
       propertyPath: m_Name
       value: Player
