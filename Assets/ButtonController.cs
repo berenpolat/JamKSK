@@ -34,6 +34,6 @@ public class ButtonController : MonoBehaviour
     public void BackToMenuButton()
     {
         completePanel.SetActive(false);
-        LevelManager.Instance.LoadNextLevel();
+        mainMenuPanel.SetActive(true);
     }
 }
