@@ -68,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballSpawnPoint: {fileID: 2100086806570643325}
   ballPrefab: {fileID: 1131010417894026980, guid: 8b0d5712242b3bb4dad21b43d95137e5, type: 3}
-  shootInterval: 0.8
+  shootInterval: 1
   animator: {fileID: 6436674585387920312}
 --- !u!1 &385640103552613576
 GameObject:
