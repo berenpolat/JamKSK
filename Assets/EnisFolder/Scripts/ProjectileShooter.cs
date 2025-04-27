@@ -94,7 +94,7 @@ public class ProjectileShooter3D : MonoBehaviour
     void FollowMouseOnXYPlane()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Vector3 centerPosition = new Vector3(transform.position.x, 2f, transform.position.z); // Y'yi 2f sabitledik
+        Vector3 centerPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z); // Y'yi 2f sabitledik
         Plane plane = new Plane(Vector3.forward, centerPosition);
 
         if (plane.Raycast(ray, out float distance))
@@ -112,18 +112,34 @@ public class ProjectileShooter3D : MonoBehaviour
 
 
 
+
+
+
     void Shoot()
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Plane xyPlane = new Plane(Vector3.forward, firePoint.position); // Z sabit, XY düzlemi
 
-        if (rb != null)
+        if (xyPlane.Raycast(ray, out float distance))
         {
-            rb.velocity = firePoint.up * projectileSpeed;
-            isProjectileArmed = false;
-            Destroy(currentPowerUpInstance);
+            Vector3 hitPoint = ray.GetPoint(distance);
+
+            Vector3 targetDirection = (hitPoint - firePoint.position).normalized;
+        
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.LookRotation(Vector3.forward, targetDirection));
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+
+            if (rb != null)
+            {
+                rb.velocity = targetDirection * projectileSpeed;
+                isProjectileArmed = false;
+                Destroy(currentPowerUpInstance);
+            }
         }
     }
+
+
+
 
    
 
